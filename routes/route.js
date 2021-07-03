@@ -4,9 +4,10 @@ const quiz = require("../models/quiz");
 
 const router = express.Router();
 
-router.get("/", async (req, res) => {
+router.get("/count/:number", async (req, res) => {
     try {
-        let response = await quiz.find({}).sort({ targetDate: 1 }).limit(3).lean();
+        let number = parseInt(req.params.number);
+        let response = await quiz.find({}).sort({ targetDate: 1 }).limit(number).lean();
         res.send(response);
     } catch (error) {
         console.log(error);
