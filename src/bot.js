@@ -1,5 +1,3 @@
-require('dotenv').config(); // Loads all env variables inside .env file
-
 const { Client } = require('discord.js');
 const client = new Client();
 const prefix = '$';
@@ -11,8 +9,10 @@ client.on('message', (message) => {
         return;
     }
     console.log(`[${message.author.tag}] : ${message.content}`);
+    console.log(message);
     if (message.content === 'hello') {
         message.reply(`Hello There!!`);
+        // message.channel.send(`${message.author.username} hello`);
         // message.channel.send("hello");
     }
 });
@@ -48,4 +48,4 @@ client.on('message', (message) => {
     }
 });
 
-client.login(process.env.DISCORDJS_BOT_TOKEN);
+module.exports = client;
