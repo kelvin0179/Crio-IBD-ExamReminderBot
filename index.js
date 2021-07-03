@@ -10,6 +10,9 @@ database();
 client.login(process.env.DISCORDJS_BOT_TOKEN);
 const app = express();
 
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
 app.use("/", require("./routes/route"));
 
 const PORT = process.env.PORT || 5000;

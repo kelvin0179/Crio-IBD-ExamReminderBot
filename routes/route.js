@@ -6,7 +6,17 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
     try {
-        let response = await quiz.find({}).sort({ targetDate: -1 }).limit(3).lean();
+        let response = await quiz.find({}).sort({ targetDate: 1 }).limit(3).lean();
+        res.send(response);
+    } catch (error) {
+        console.log(error);
+        res.send("No Records");
+    }
+});
+
+router.get("/:name", async (req, res) => {
+    try {
+        let response = await quiz.find({ name: req.params.name }).lean();
         res.send(response);
     } catch (error) {
         console.log(error);
@@ -16,6 +26,7 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
     try {
+        console.log(req.body);
         let saveData = new quiz({
             name: req.body.name,
             targetDate: req.body.targetDate
@@ -25,6 +36,29 @@ router.post("/", async (req, res) => {
     } catch (error) {
         console.log(error);
         res.send("Invalid Data");
+    }
+});
+
+router.put("/:name", async (req, res) => {
+    try {
+        await quiz.findOneAndUpdate({ name: req.params.name }, req.body, {
+            new: true,
+            runValidators: true
+        });
+        res.send("Record Updated");
+    } catch (error) {
+        console.log(error);
+        res.send("This record dose not exits");
+    }
+});
+
+router.delete("/:name", async (req, res) => {
+    try {
+        await quiz.deleteOne({ name: req.params.name });
+        res.send("Record Deleted");
+    } catch (error) {
+        console.log(error);
+        res.send("This record dose not exits");
     }
 });
 
