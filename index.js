@@ -10,6 +10,8 @@ database();
 client.login(process.env.DISCORDJS_BOT_TOKEN);
 const app = express();
 
+app.use("/", require("./routes/route"));
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, console.log(`Server is running on Port ${PORT}`));
