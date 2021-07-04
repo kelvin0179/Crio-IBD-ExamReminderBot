@@ -25,6 +25,29 @@ router.get("/:name", async (req, res) => {
     }
 });
 
+router.get("/api/record/alert", async (req, res) => {
+    try {
+        let newDate = new Date(Date.now());
+        let response = await quiz.aggregate(
+            [
+                {
+                    $addFields: {
+                        daysAway: { $divide: [{ $subtract: ["$targetDate", newDate] }, 86400000] } // 1 day == 8.64 * 1e7 ms
+                    }
+                },
+                {
+                    $match: { daysAway: { $lte: 2 } }
+                }
+            ]
+        );
+        console.log(response);
+        if (response.length > 0)
+            res.send(response);
+    } catch (error) {
+        console.log(error);
+    }
+});
+
 router.post("/", async (req, res) => {
     try {
         console.log(req.body);
@@ -73,6 +96,7 @@ router.delete("/date/currentDate", async (req, res) => {
         let arr = await quiz.deleteMany({ targetDate: { $lte: newDate } });
         console.log(arr);
         let deletedNumber = parseInt(arr.deletedCount);
+        console.log(deletedNumber);
         if (deletedNumber > 0)
             res.send(`${arr.deletedCount} exams are over today!`);
     } catch (error) {
