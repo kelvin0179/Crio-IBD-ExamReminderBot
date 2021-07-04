@@ -64,3 +64,8 @@ Set up environment variables
 ```sh
 $ heroku config:set ENV_VAR=<value>
 ```
+
+## Screen Shots
+
+![1](https://user-images.githubusercontent.com/56430190/124385415-1efd1c00-dcf3-11eb-8b08-fd1fce35944b.PNG)
+
