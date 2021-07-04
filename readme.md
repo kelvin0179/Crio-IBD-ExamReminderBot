@@ -18,26 +18,42 @@ You need to have `Node` or `npm` installed on your machine.
 ## Step 1.
 * Go to [DeveloperDiscord](https://discord.com/developers/applications) to create an application.
 * ![image](https://user-images.githubusercontent.com/56430190/124389125-6a1f2b00-dd03-11eb-9f87-5ee200c9b17d.png)
+* Go inside your app and then goto **BOT** on the sidebar settings.
+* Then copy the BOT Token and paste it in the **config.env**.
+```sh
+DISCORDJS_BOT_TOKEN=<Your Token Goes here>
+```
 
+## Step 2.
+* Then go to oauth2 in the settings and copy the clientID.
+* Open a new Tab and on the address bar type `https://discord.com/oauth2/authorize?client_id=<Your ClientID goes here>&scope=bot`
+* Then you will see something like this.
+* ![image](https://user-images.githubusercontent.com/56430190/124389565-5f659580-dd05-11eb-9ffb-05ba99358475.png)
+* **Note** : You can only include your bot in servers where you have permission to do so.
+* This concludes the addition of the Bot.
 
-
+## Step 3.
 ### Install dependencies 
 ```sh
 $ npm install
 ```
-
 ### Set up environment variables 
-
 ```sh
 $ cd config
 ```
 fill the values for environment variables in `config.env`.
-
+```sh
+MONGO_URI = 
+PORT = <Your Custom Port>
+BASE_URL = http://localhost:<Your Custom Port>
+```
 ### Local Run
 After setting up environment proceed with local run 
 ```sh
 $ npm start
 ```
+### Your should see this.
+![2](https://user-images.githubusercontent.com/56430190/124385641-430d2d00-dcf4-11eb-8fe8-a08386763250.PNG)
 
 ## File System
 ```sh
