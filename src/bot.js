@@ -65,6 +65,10 @@ client.on('message', async (message) => {
                     }
                     await axios.get(`${process.env.BASE_URL}/count/${args[0]}`)
                         .then(response => {
+                            if (response.data.length == 0) {
+                                message.channel.send("There are no records");
+                                return;
+                            }
                             var targetDate, resultString = "", dash = "\n-----------------------------\n";
                             for (let i = 0; i < response.data.length; i++) {
                                 resultString += (response.data[i].name);
