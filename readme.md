@@ -67,18 +67,18 @@ $ heroku config:set ENV_VAR=<value>
 
 ## Screen Shots
 
-* Say hello to the Bot!
+### Say hello to the Bot!
 ![1](https://user-images.githubusercontent.com/56430190/124385415-1efd1c00-dcf3-11eb-8b08-fd1fce35944b.PNG)
-* In the Bot's Description `$help` command is provided so that any new user can access the Bot easily.
+### In the Bot's Description `$help` command is provided so that any new user can access the Bot easily.
 ![2](https://user-images.githubusercontent.com/56430190/124385641-430d2d00-dcf4-11eb-8fe8-a08386763250.PNG)
-* The help command.
+### The help command.
 ![3](https://user-images.githubusercontent.com/56430190/124385642-443e5a00-dcf4-11eb-9ee4-5bae0ba27d11.PNG)
-* The post command according to help.
+### The post command according to help.
 ![4](https://user-images.githubusercontent.com/56430190/124385643-44d6f080-dcf4-11eb-9f3f-23b802e2b637.PNG)
-* The get command according to help.
+### The get command according to help.
 ![5](https://user-images.githubusercontent.com/56430190/124385644-456f8700-dcf4-11eb-81a4-1038fc6053e8.PNG)
-* The delete command according to help.
+### The delete command according to help.
 ![6](https://user-images.githubusercontent.com/56430190/124385646-46081d80-dcf4-11eb-810b-594c671976b7.PNG)
-* The get after deleting.
+### The get after deleting.
 ![7](https://user-images.githubusercontent.com/56430190/124385648-46081d80-dcf4-11eb-8e30-90592512e25c.PNG)
 
