@@ -28,7 +28,7 @@ client.on('message', async (message) => {
         console.log(CMD_NAME);
         console.log(args);
         if (CMD_NAME === "help") {
-            message.channel.send("You have access to the following commands. \n`$get [1-3]` : **To get at most 3 quiz closest to the current Date.** \n`$get [QuizName]` : **Get Information for that Quiz.** \n`$post [quizNameWithNoSpace] [DateIn (YYYY-MM-DD) Format]` : **Posting of a Quiz.** \n`$edit [CurrentQuizName] [NewQuizName] [NewDateIn (YYYY-MM-DD) Format]` : **To Edit a Quiz**  \n`$delete [QuizName]` : **To Delete a Quiz**\n\n **Note** : **Remove the Square Brackets while typing the commands!**");
+            message.channel.send("You have access to the following commands. \n`$get [1-3]` : **To get at most 3 quiz closest to the current Date.** \n`$get [QuizNameWithNoSpace]` : **Get Information for that Quiz.** \n`$post [QuizNameWithNoSpace] [DateIn (YYYY-MM-DD) Format]` : **Posting of a Quiz.** \n`$edit [CurrentQuizNameNoSpace] [NewQuizNameNoSpace] [NewDateIn (YYYY-MM-DD) Format]` : **To Edit a Quiz**  \n`$delete [QuizNameNoSpace]` : **To Delete a Quiz**\n\n **Note** : **Remove the Square Brackets while typing the commands!**");
         }
         if (CMD_NAME === "get") {
             if (args.length > 1) {
@@ -58,6 +58,11 @@ client.on('message', async (message) => {
                         });
                 }
                 else {
+                    let no = parseInt(args[0]);
+                    if (no > 3 || no < 1) {
+                        message.channel.send("Enter Within Range");
+                        return;
+                    }
                     await axios.get(`${process.env.BASE_URL}/count/${args[0]}`)
                         .then(response => {
                             var targetDate, resultString = "", dash = "\n-----------------------------\n";

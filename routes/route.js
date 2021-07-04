@@ -59,7 +59,10 @@ router.post("/", async (req, res) => {
         res.send("Record Saved");
     } catch (error) {
         console.log(error);
-        res.send("Invalid Data");
+        if (error.code === 11000)
+            res.send("Name Already Exists");
+        else
+            res.send("Invalid Data");
     }
 });
 

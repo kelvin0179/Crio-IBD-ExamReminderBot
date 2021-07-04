@@ -27,7 +27,7 @@ module.exports = (client) => {
                 for (let i = 0; i < response.data.length; i++) {
                     let f = parseFloat(response.data[i].daysAway);
                     f = Math.ceil(f);
-                    localString += (`${response.data[i].name} is ${f} days away\n`);
+                    localString += (`**${response.data[i].name}** is **${f}** days away\n`);
                 }
                 channel.send(localString);
             })
