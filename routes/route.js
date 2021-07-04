@@ -68,14 +68,17 @@ router.post("/", async (req, res) => {
 
 router.put("/:name", async (req, res) => {
     try {
-        await quiz.findOneAndUpdate({ name: req.params.name }, req.body, {
+        let arr = await quiz.findOneAndUpdate({ name: req.params.name }, req.body, {
             new: true,
             runValidators: true
         });
+        if (arr === null) {
+            throw err;
+        }
         res.send("Record Updated");
     } catch (error) {
         console.log(error);
-        res.send("This record dose not exits");
+        res.send("This record dose not exists");
     }
 });
 
