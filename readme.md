@@ -7,12 +7,19 @@
 * [Mongoose](https://mongoosejs.com/) - ODM
 * [MongoDB](https://www.mongodb.com/) - Database
 * [Node Cron](https://www.npmjs.com/package/node-cron) - Job scheduler
+* [Axios](https://www.npmjs.com/package/axios) - Promise based HTTP client for the browser and node.js
 
-## Getting Started
+# Getting Started
 These instructions will get your copy of the project up and running on your local machine for development and testing purposes.
-
 ### Prerequisites
 You need to have `Node` or `npm` installed on your machine.
+
+# How To Use
+## Step 1.
+* Go to [DeveloperDiscord](https://discord.com/developers/applications) to create an application.
+* ![image](https://user-images.githubusercontent.com/56430190/124389125-6a1f2b00-dd03-11eb-9f87-5ee200c9b17d.png)
+
+
 
 ### Install dependencies 
 ```sh
@@ -22,9 +29,9 @@ $ npm install
 ### Set up environment variables 
 
 ```sh
-    cd config
+$ cd config
 ```
-fill the values for environment variables.
+fill the values for environment variables in `config.env`.
 
 ### Local Run
 After setting up environment proceed with local run 
