@@ -55,11 +55,28 @@ router.put("/:name", async (req, res) => {
 
 router.delete("/:name", async (req, res) => {
     try {
-        await quiz.deleteOne({ name: req.params.name });
-        res.send("Record Deleted");
+        let arr = await quiz.deleteOne({ name: req.params.name });
+        console.log(arr);
+        if (arr.deletedCount == 0)
+            res.send("No Record to Delete");
+        else
+            res.send("Record Deleted");
     } catch (error) {
         console.log(error);
         res.send("This record dose not exits");
+    }
+});
+
+router.delete("/date/currentDate", async (req, res) => {
+    try {
+        let newDate = new Date(Date.now());
+        let arr = await quiz.deleteMany({ targetDate: { $lte: newDate } });
+        console.log(arr);
+        let deletedNumber = parseInt(arr.deletedCount);
+        if (deletedNumber > 0)
+            res.send(`${arr.deletedCount} exams are over today!`);
+    } catch (error) {
+        console.log(error);
     }
 });
 

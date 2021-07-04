@@ -3,11 +3,14 @@ const mongoose = require("mongoose");
 const database = require("./config/db");
 const dotenv = require("dotenv");
 const client = require("./src/bot");
+const scheduler = require("./src/scheduler");
 
 dotenv.config({ path: "./config/config.env" });
 
 database();
+scheduler(client);
 client.login(process.env.DISCORDJS_BOT_TOKEN);
+
 const app = express();
 
 app.use(express.urlencoded({ extended: false }));
