@@ -14,6 +14,11 @@ These instructions will get your copy of the project up and running on your loca
 ### Prerequisites
 You need to have `Node` or `npm` installed on your machine.
 
+### Bring to your local machine
+```sh
+git clone <git repo>
+```
+
 # How To Use
 ## Step 1.
 * Go to [DeveloperDiscord](https://discord.com/developers/applications) to create an application.
@@ -104,4 +109,7 @@ $ heroku config:set ENV_VAR=<value>
 ![6](https://user-images.githubusercontent.com/56430190/124385646-46081d80-dcf4-11eb-810b-594c671976b7.PNG)
 ### The get after deleting.
 ![7](https://user-images.githubusercontent.com/56430190/124385648-46081d80-dcf4-11eb-8e30-90592512e25c.PNG)
+### Alert on the upcoming quiz
+![image](https://user-images.githubusercontent.com/56430190/124427267-ca0be500-dd88-11eb-9fff-52ace1343cd4.png)
+
 
