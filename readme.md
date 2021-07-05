@@ -1,5 +1,8 @@
+
 # Discord Exam Reminder Bot
 * A Discord Bot which alerts user when an exam is close by , User can also post , edit and delete Exam Schedules.
+
+### Video Tutorial Link [Here](https://drive.google.com/drive/folders/1ZAeCY66yTg4PyGEvMszYSvK2Ox--hAvr?usp=sharing)
 
 ## Built With
 * [NodeJS](https://nodejs.org/en/docs/) -  evented I/O for the backend
