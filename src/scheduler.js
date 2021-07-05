@@ -8,7 +8,7 @@ module.exports = (client) => {
         channel = client.channels.cache.find(iterator => iterator.name === "general");
     });
     var reminderString = "0 7 */1 * *", deleteString = "59 23 */1 * *";
-    // var reminderString = "*/10 * * * * *", deleteString = "*/15 * * * * *";
+    // var reminderString = "0 24 9 * * *", deleteString = "*/15 * * * * *";
     cron.schedule(deleteString, async (req, res) => {
         console.log("Deletion Job Active");
         await axios.delete(`${process.env.BASE_URL}/date/currentDate`)
